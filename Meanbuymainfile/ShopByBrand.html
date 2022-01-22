@@ -30,6 +30,7 @@
 </head>
 <body>
     <!-- navigation bar -->
+   
     <div id="nav">
         <div id="freeShiping"> Free shipping above<i class="fas fa-rupee-sign"></i> 599</div>
         <div id="imglogsearch">
@@ -79,18 +80,19 @@
         
         <div id="rightmenu" >
             <ul>
-                <li id="m11"><a href="#"> Best Deals</a></li>
+                <li id="m3"><a href="NewArrival.html"> New Arrivals</a></li>
+              
                 <li id="m1"><a href="ShopByBrand.html">Shop by Brand</a></li>
                 <li  id="m2"><a href="trending.html"> Trending</a></li>
-                <li id="m3"><a href="NewArrival.html"> New Arrivals</a></li>
+                <li id="m11"><a href="#"> Best Deals</a></li>
+              
             </ul>
         </div>
     </div>
     </div>
     
     <!-- navigation bar end -->
-    <div style="height: 20px; margin-top: 48px;"></div>
-    <div>
+    <div style="margin-top: 200px;">
         <h1> Shop by Brand</h1>
 
     <div id="brandcont">
@@ -233,3 +235,22 @@
       }
     }
 </script> -->
+<script>
+
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
