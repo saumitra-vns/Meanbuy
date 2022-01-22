@@ -6,6 +6,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+
+
+/* footer css--------------------------------------- */
+
+
+.fcontainer{
+
+font-family: Lato,sans-serif !important;
+background-color:  rgb(242,242,242);
+width: 100%;
+padding: 0%;
+background-color: rgb(242,242,242);
+
+}
+
+
+.box{
+
+display: flex;
+flex-wrap: wrap;    
+padding: 10px;
+box-sizing: border-box;
+
+
+}
+.innerbox>h2{
+font-size: 14px;
+color: #F3921F;
+margin-top: 20px;
+margin-bottom: 10px;
+font-family: inherit;
+text-decoration: none;
+font-weight:lighter;
+}
+.innerbox li {
+display: list-item;
+text-align: -webkit-match-parent;
+  color:#666666;
+list-style-type: none;
+
+
+}
+.innerbox a:hover{
+text-decoration-line: underline;
+}
+ul{
+padding-left: 0;
+}
+.innerbox{
+width: 20%;
+margin-right: 5%px;
+margin-left: 0%;
+
+}
+.box{
+
+width: 100%;
+margin: auto;
+}
+a:link{
+text-decoration: none;
+}
+.innerbox a{
+color: #666666;
+font-size: 12px;
+line-height: 1.42857143;
+
+}
+#emailbox2{
+border-top-style: hidden;
+border-right-style: hidden;
+border-left-style: hidden;
+border-bottom-style: hidden;
+
+float: left;
+outline: 0;
+
+width: 60%;
+
+height: 29px;
+font-size: 11px;
+}
+#lastbox{
+margin-right: 0%;
+width: 40%;
+}
+#sbutton{
+width: 30%;
+background: #F3921F;
+height: 30px;
+margin-top: 15px;
+color: #fff;
+outline: 0;
+border: 0;
+}
+#fimage{
+width: 275px;
+height: 90px;
+display: inline-block;
+margin-top: 8%;
+
+}
+.row h1{
+margin-top: 20px;
+margin-bottom: 10px;
+font-size: 16px;
+color: #F3921F;
+margin-top: 20px;
+margin-bottom: 10px;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+text-decoration: none;
+font-weight:lighter;
+}
+.row p{
+
+color:#666666;
+font-size: 12px;
+}
+.row h2 {
+font-size: 14px;
+color: #F3921F;
+margin-top: 20px;
+margin-bottom: 10px;
+font-family: inherit;
+text-decoration: none;
+font-weight: lighter;
+
+}
+#subfooter{
+background: #DBDBDB;
+line-height: 30px;
+height: 30px;
+text-align: right;
+color: #666;
+font-size: 14px;
+font-family: inherit;
+
+}
+
+@media only screen and (min-width:0px) and (max-width:700px)
+{
+.innerbox{
+    width: 100%;
+}
+}
+/* --------------------------------------------------- */
       #container {
         /* border: 1px solid green; */
         width: 100%;
@@ -60,10 +206,10 @@
         <div id="facebookdiv" style="display: flex;flex-wrap:wrap;">
           <div id =
           "loboimg" >
-              <img src = "http://2.bp.blogspot.com/-96vqJEQkmAo/UtQZQD4KskI/AAAAAAAABV4/Aw1VV__7gRs/s1600/facebook+logo.jpg">
+          <a href = "https://www.facebook.com/"><img src = "http://2.bp.blogspot.com/-96vqJEQkmAo/UtQZQD4KskI/AAAAAAAABV4/Aw1VV__7gRs/s1600/facebook+logo.jpg"></a> 
           </div>
           <div class="sign">
-            <img src = "https://img.icons8.com/color/2x/google-logo.png">
+            <a href = "https://www.google.co.in"><img src = "https://img.icons8.com/color/2x/google-logo.png"></a>
           </div>
         </div>
 
@@ -112,7 +258,7 @@
       </div>
 
       <div class = "edit" style = "Color:orange; border:1px solid orange ;text-align:center;padding:5px;">
-        <submit><span>EDIT CARD</span></submit>
+        <a href = "meanbuy.html" alt="_blank"><submit><span>EDIT CARD</span></submit></a> 
         </div>
      
 
@@ -153,13 +299,13 @@
               </div>
               <div class="innerbox">
                   <h2>HELP</h2>
-    <ul>
-      <li><a href="">How MeanBuy Works</a>
-      <li><a href="">My Orders</a></li>
-      <li><a href="">Exchanges, Returns and Refunds</a></li>
-      <li><a href="">Contact Us</a></li>
-      <li><a href="">FAQ</a></li>
-    </ul>
+          <ul>
+              <li><a href="">How MeanBuy Works</a>
+              <li><a href="">My Orders</a></li>
+              <li><a href="">Exchanges, Returns and Refunds</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQ</a></li>
+          </ul>
               </div>
               <div class="innerbox" id="lastbox">
                   <input type="email" placeholder="Your Email address" id="emailbox">
@@ -167,7 +313,7 @@
                   <img src="payment option.png" alt="Image"  id="fimage">
                   <h2 class="heading">SELL WITH US</h2>
                   <a href=''>General Information</a><br>
-      <a href=''>Signup</a><br><br>
+              <a href=''>Signup</a><br><br>
               </div>
               
           </div>
@@ -196,7 +342,7 @@
           <div id="subfooter">
               &copy; MeanBuy.com. All Rights Reserved
           </div>
-      </div>
+   </div>
   </div>
     
   </body>
