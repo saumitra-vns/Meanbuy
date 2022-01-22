@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessory</title>
+    <!-- <link rel="stylesheet" href="categorystyle.css"> -->
+    <style>
+
+      
+       body{
+  background-color: white;
+}
+
+#maindivvv {
+  background-color: rgb(244, 244, 244);
+  display: flex;
+  padding: 5px;
+}
+#AccesoriesContainer {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 10%;
+  gap: 20px;
+}
+#singlediv {
+  width: 100%;
+  background-color: white;
+  /* height: 100%; */
+  /* border: 1px solid red; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#brandRate {
+  display: flex;
+  justify-content: space-between;
+  font-family:  sans-serif ;
+  color: grey;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  /* border: 1px solid red; */
+}
+#price {
+  margin-bottom: -15px;
+  margin-top: 0px;
+  /* position: absolute; */
+}
+#img {
+  width: 100%;
+  height: 65%;
+}
+#subdiv {
+  padding: 10px;
+}
+#subcategory {
+  width: 20%;
+  /* height:1800px; */
+  background-color: white;
+  text-align: left;
+  font-family: sans-serif ;
+}
+#rate{
+  border: 1px solid green;
+  padding: 5px 5px 0px 10px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 6px;
+ position: absolute;
+ margin-left: 17%;
+ 
+ 
+}
+#ship {
+  color: green;
+  font-family: sans-serif ;;
+  font-size: 20px;
+  
+}
+h1 {
+  color: grey;
+}
+li {
+  font-size: 16px;
+  font-weight: bolder;
+  color: rgb(103, 110, 103);
+}
+#brand{
+  width: 200px;
+  margin-bottom: 10px;
+  /* border: 1px solid green; */
+}
+#sortbyprice{
+ 
+  padding: 10px;
+  font-weight: bolder;
+  border: 0px;
+  border-radius: 6px;
+  width: 10%;
+  margin-bottom: 6px;
+}
+#subdives{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width:0px) and (max-width:480px){
+  #AccesoriesContainer{
+      grid-template-columns: repeat(1,1fr);
+      width: 100%;
+      
+  }
+  #subcategory {
+    /* width: 20%;
+    /* height:1800px; */
+    /* background-color: white;
+    text-align: center; */ 
+    display: none;
+  }
+  #rate{
+    position: relative;
+  }
+}
+@media only screen and (min-width:481px) and (max-width:800px){
+  #AccesoriesContainer{
+      grid-template-columns: repeat(2,1fr);
+      width: 100%;
+      /* grid-template-rows: repeat(4,200px);   */
+  }
+  #subcategory {
+    /* width: 20%;
+    /* height:1800px; */
+    /* background-color: white;
+    text-align: center; */ 
+    display: none;
+  }
+  #rate{
+    position: relative;
+  }
+  #ship {
+    
+    font-size: 16px;
+}
+}
+    </style>
+</head>
+<body>
+  <div id="subdives">
+<div>
+    <input type="checkbox" id="scales" name="scales">
+    <label for="scales" style="font-family: sans-serif">Buy Now</label>
+
+  </div>
+  <div>
+    <input type="checkbox" id="scales" name="scale">
+    <label for="scale" style="font-family: sans-serif">Wait & save</label>
+
+</div>
+  <select name="sort" id="sortbyprice" onchange="sortbyprice()">
+    <option value="" style="font-family: sans-serif">Sort By Price</option>
+    <option value="low">Low To High</option>
+    <option value="high">High To Low</option>
+    
+  </select>
+
+</div>
+  <div id="maindivvv">
+    <div id="subcategory">
+        <h2>Subcategories</h2>
+      <ul>
+          <li>Watches</li>
+      </ul>
+
+
+    </div>
+   
+    <div id="AccesoriesContainer">
+     
+      
+    </div>
+    <div>
+      
+    </div>
+
+  </div>
+</body>
+</html>
+<script>
+   var Accessorydata = [
+    {image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mzk5XC9TaWx2ZXJfbl8xXzIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5MzQzXC9Db2ZmZWVfbl8xXzMuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "Dual Movt Quartz Wristwatch",
+      rating: "4.6/5 *",
+      price: 2499,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5NzY2XC9SZWRfbl8xXzQuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "CURREN Quartz Watch",
+      rating: "4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5ODY5XC9CbGFja19uXzFfMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Ultra-thin Steel Belt Watch",
+      rating: "4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mjg0XC9XaGl0ZV9uXzFfMi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mzk5XC9TaWx2ZXJfbl8xXzIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5MzQzXC9Db2ZmZWVfbl8xXzMuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "Dual Movt Quartz Wristwatch",
+      rating:" 4.6/5 *",
+      price: 2499,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5NzY2XC9SZWRfbl8xXzQuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "CURREN Quartz Watch",
+      rating: "4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5ODY5XC9CbGFja19uXzFfMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Ultra-thin Steel Belt Watch",
+      rating: "4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mjg0XC9XaGl0ZV9uXzFfMi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mzk5XC9TaWx2ZXJfbl8xXzIuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5MzQzXC9Db2ZmZWVfbl8xXzMuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "Dual Movt Quartz Wristwatch",
+      rating: "4.6/5 *",
+      price: 2499,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5NzY2XC9SZWRfbl8xXzQuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6Mjk1LCJoZWlnaHQiOjI5NSwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+      brandName: "CURREN Quartz Watch",
+      rating: "4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5ODY5XC9CbGFja19uXzFfMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=" , 
+      brandName: "Ultra-thin Steel Belt Watch",
+      rating:" 4.5/5 *",
+      price: 2199,
+      shipping: "Free Shipping",
+    },
+
+    {
+      image_url:
+        "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mjg0XC9XaGl0ZV9uXzFfMi5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyOTUsImhlaWdodCI6Mjk1LCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+      brandName: "Skmei Luxury Quartz Watch",
+      rating: "4.6/5 *",
+      price: 3099,
+      shipping: "Free Shipping",
+    },
+  ];
+
+
+displaydata(Accessorydata)
+
+  function sortbyprice()
+{
+    var selected = document.querySelector("#sortbyprice").value;
+    if(selected=="low")
+    {
+      Accessorydata.sort(function(a,b)
+        {
+            return a.price - b.price
+        })
+    }
+    if(selected=="high")
+    {
+      Accessorydata.sort(function(a,b)
+        {
+            return b.price - a.price
+        })
+    }
+    displaydata(Accessorydata)
+ 
+}
+
+function displaydata(Accessorydata)
+{
+  document.querySelector("#AccesoriesContainer").innerHTML="";
+Accessorydata.map(function(elem){
+
+var div = document.createElement("div")
+div.setAttribute("id","singlediv")
+
+
+var image = document.createElement("img")
+image.setAttribute("src",elem.image_url)
+image.setAttribute("id","img")
+
+var hr = document.createElement("hr")
+
+var subdiv = document.createElement("div");
+subdiv.setAttribute("id","subdiv")
+
+var div2 = document.createElement("div");
+div2.setAttribute("id","brandRate")
+
+var brandname = document.createElement("p")
+brandname.textContent=elem.brandName
+
+
+
+var rating = document.createElement("div")
+rating.textContent=elem.rating;
+rating.setAttribute("id","rate")
+
+
+
+
+var price = document.createElement("h2")
+price.textContent=`₹`+elem.price;
+price.setAttribute("id","price")
+
+var shipping = document.createElement("p")
+shipping.textContent=elem.shipping
+shipping.setAttribute("id","ship")
+
+div2.append(brandname,rating)
+
+subdiv.append(div2,hr,price,shipping)
+
+div.append(image,subdiv)
+document.getElementById("AccesoriesContainer").append(div)
+
+
+
+
+
+
+
+
+
+});
+
+}
+
+
+   
+</script>
