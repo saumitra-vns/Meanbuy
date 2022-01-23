@@ -126,7 +126,11 @@
 
 for(var elem=data.length-50;elem>=10;elem--)
 {
+    var itemdata=[];
     var box=document.createElement("div");
+    box.addEventListener("click",function(){
+        addlickevent(elem);
+    });
     var img=document.createElement("img");
     img.setAttribute("src",data[elem].Image);
 
@@ -161,6 +165,12 @@ for(var elem=data.length-50;elem>=10;elem--)
     document.querySelector("#tradingitem").append(box);
 
 
+}
+function addlickevent(elem){
+    // itemdata.push(elem);
+    // localStorage.setItem("itemdata",JSON.stringify(itemdata));
+    window.location.href="produ.html"
+    
 }
 
 
