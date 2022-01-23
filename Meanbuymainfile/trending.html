@@ -197,9 +197,13 @@
 <script type="text/javascript" src="scrept.js"></script>
 <script>
     
-data.filter(function(elem)
+    data.filter(function(elem)
 {
+    var itemdata=[];
     var box=document.createElement("div");
+    box.addEventListener("click",function(){
+        addlickevent(elem);
+    });
     var img=document.createElement("img");
     img.setAttribute("src",elem.Image);
 
@@ -232,9 +236,13 @@ data.filter(function(elem)
     box.append(img,boxx,hr,price,delev);
 
     document.querySelector("#tradingitem").append(box);
-
-
 });
+function addlickevent(elem){
+    // itemdata.push(elem);
+    // localStorage.setItem("itemdata",JSON.stringify(itemdata));
+    window.location.href="produ.html"
+    
+}
 
 // var colectdata=document.querySelectorAll("#tradingitem")
 function myFunction() {
